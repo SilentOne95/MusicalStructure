@@ -16,8 +16,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".song_list" />
-        <activity android:name=".FirstAlbum"></activity>
+        <activity android:name=".FirstAlbum" android:label="Song List"/>
+        <activity android:name=".SecondAlbum" android:label="Song List"/>
+        <activity android:name=".ThirdAlbum" android:label="Song List"/>
+        <activity android:name=".FourthAlbum" android:label="Song List"/>
+        <activity android:name=".FifthAlbum" android:label="Song List"/>
+        <activity android:name=".SixthAlbum" android:label="Song List"/>
+        <activity android:name=".SeventhAlbum" android:label="Song List"/>
+        <activity android:name=".EighthAlbum" android:label="Song List"/>
     </application>
 
 </manifest>

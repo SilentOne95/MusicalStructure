@@ -3,9 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_height="210dp"
     android:orientation="vertical"
-    android:padding="16dp">
+    android:padding="16dp"
+    android:id="@+id/grid_item">
 
     <ImageView
         android:id="@+id/song_list_image"
@@ -18,7 +19,6 @@
         android:layout_height="wrap_content"
         android:textAlignment="center"
         android:textColor="#fff"
-        android:textSize="18sp"
-        android:textStyle="bold"/>
+        android:textSize="16sp" />
 
 </LinearLayout>

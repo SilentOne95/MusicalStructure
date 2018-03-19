@@ -25,81 +25,72 @@ public class MainActivity extends AppCompatActivity {
         firstRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, FirstAlbum.class);
+                Intent firstAlbumIntent = new Intent(MainActivity.this, FirstAlbum.class);
 
-                startActivity(numbersIntent);
+                startActivity(firstAlbumIntent);
             }
         });
 
         secondRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, FirstAlbum.class);
+                Intent secondAlbumIntent = new Intent(MainActivity.this, SecondAlbum.class);
 
-                startActivity(numbersIntent);
+                startActivity(secondAlbumIntent);
             }
         });
 
         thirdRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, FirstAlbum.class);
+                Intent thirdAlbumIntent = new Intent(MainActivity.this, ThirdAlbum.class);
 
-                startActivity(numbersIntent);
+                startActivity(thirdAlbumIntent);
             }
         });
 
         fourthRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, FirstAlbum.class);
+                Intent fourthAlbumIntent = new Intent(MainActivity.this, FourthAlbum.class);
 
-                startActivity(numbersIntent);
+                startActivity(fourthAlbumIntent);
             }
         });
 
         fifthRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, FirstAlbum.class);
+                Intent fifthAlbumIntent = new Intent(MainActivity.this, FifthAlbum.class);
 
-                startActivity(numbersIntent);
+                startActivity(fifthAlbumIntent);
             }
         });
 
         sixthRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, FirstAlbum.class);
+                Intent sixthAlbumIntent = new Intent(MainActivity.this, SixthAlbum.class);
 
-                startActivity(numbersIntent);
+                startActivity(sixthAlbumIntent);
             }
         });
 
         seventhRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, FirstAlbum.class);
+                Intent seventhAlbumIntent = new Intent(MainActivity.this, SeventhAlbum.class);
 
-                startActivity(numbersIntent);
+                startActivity(seventhAlbumIntent);
             }
         });
 
         eighthRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, FirstAlbum.class);
+                Intent eighthAlbumIntent = new Intent(MainActivity.this, EighthAlbum.class);
 
-                startActivity(numbersIntent);
-            }
-        });
-
-        fourthRow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent numbersIntent = new Intent(MainActivity.this, FirstAlbum.class);
-
-                startActivity(numbersIntent);
+                startActivity(eighthAlbumIntent);
             }
         });
     }
