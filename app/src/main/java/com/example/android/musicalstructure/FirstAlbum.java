@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -40,15 +41,24 @@ public class FirstAlbum extends AppCompatActivity {
         titles[14] = "Weight of Time";
         titles[15] = "Faint Resemblance";
 
-        ArrayList<Song> songItem = new ArrayList<>();
+        final ArrayList<Song> songItem = new ArrayList<>();
 
         for(int i = 0; titles.length > i; i++){
             songItem.add(new Song(titles[i], R.drawable.first_album));
         }
 
         GridSongAdapter adapter = new GridSongAdapter(this, songItem);
-        GridView gridView = findViewById(R.id.grid_view);
+        final GridView gridView = findViewById(R.id.grid_view);
         gridView.setAdapter(adapter);
+
+        gridView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent playerIntent = new Intent(FirstAlbum.this, Player.class);
+
+                startActivity(playerIntent);
+            }
+        });
     }
 
     @Override
