@@ -23,6 +23,7 @@ public class FirstAlbum extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+        // This Array stores song titles in Strings
         String titles[] = new String[16];
         titles[0] = "Alive and Well";
         titles[1] = "My Life Inside Your Heart";
@@ -41,12 +42,18 @@ public class FirstAlbum extends AppCompatActivity {
         titles[14] = "Weight of Time";
         titles[15] = "Faint Resemblance";
 
+        // Declaring new ArrayList
         final ArrayList<Song> songItem = new ArrayList<>();
 
+        // Adding to the ArrayList song titles and images in loop
         for(int i = 0; titles.length > i; i++){
             songItem.add(new Song(titles[i], R.drawable.first_album));
         }
 
+        /**
+         * Create a gridView
+         * the data source is a list of object from the ArrayList.
+         */
         GridSongAdapter adapter = new GridSongAdapter(this, songItem);
         final GridView gridView = findViewById(R.id.grid_view);
         gridView.setAdapter(adapter);

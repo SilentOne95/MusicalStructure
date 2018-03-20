@@ -14,6 +14,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Find the views and instantiate Id's.
         RelativeLayout firstRow = findViewById(R.id.first_row);
         RelativeLayout secondRow = findViewById(R.id.second_row);
         RelativeLayout thirdRow = findViewById(R.id.third_row);
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout seventhRow = findViewById(R.id.seventh_row);
         RelativeLayout eighthRow = findViewById(R.id.eighth_row);
 
+        // This listeners gets triggered whenever Album List is clicked.
         firstRow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
