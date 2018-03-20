@@ -2,6 +2,7 @@ package com.example.android.musicalstructure;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -13,23 +14,43 @@ public class SecondAlbum extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_song_list);
 
+        if(getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
+        String titles[] = new String[13];
+        titles[0] = "Black Masks and Gasoline";
+        titles[1] = "Heaven Knows";
+        titles[2] = "Dead Ringer";
+        titles[3] = "Halfway There";
+        titles[4] = "Like the Angel";
+        titles[5] = "Voices Off Camera";
+        titles[6] = "Blood-Red, White and Blue";
+        titles[7] = "Broken English";
+        titles[8] = "Last Chance Blueprint";
+        titles[9] = "To the Core";
+        titles[10] = "Torches";
+        titles[11] = "Amber Changing";
+        titles[12] = "Any Way You Want It";
+
         ArrayList<Song> songItem = new ArrayList<>();
-        songItem.add(new Song("Black Masks and Gasoline", R.drawable.second_album));
-        songItem.add(new Song("Heaven Knows", R.drawable.second_album));
-        songItem.add(new Song("Dead Ringer", R.drawable.second_album));
-        songItem.add(new Song("Halfway There", R.drawable.second_album));
-        songItem.add(new Song("Like the Angel", R.drawable.second_album));
-        songItem.add(new Song("Voices Off Camera", R.drawable.second_album));
-        songItem.add(new Song("Blood-Red, White and Blue", R.drawable.second_album));
-        songItem.add(new Song("Broken English", R.drawable.second_album));
-        songItem.add(new Song("Last Chance Blueprint", R.drawable.second_album));
-        songItem.add(new Song("To the Core", R.drawable.second_album));
-        songItem.add(new Song("Torches", R.drawable.second_album));
-        songItem.add(new Song("Amber Changing", R.drawable.second_album));
-        songItem.add(new Song("Any Way You Want It", R.drawable.second_album));
+
+        for(int i = 0; titles.length > i; i++){
+            songItem.add(new Song(titles[i], R.drawable.second_album));
+        }
 
         GridSongAdapter adapter = new GridSongAdapter(this, songItem);
         GridView gridView = findViewById(R.id.grid_view);
         gridView.setAdapter(adapter);
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home)
+            finish();
+
+        return super.onOptionsItemSelected(item);
+    }
+
 }
