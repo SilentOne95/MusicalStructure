@@ -14,6 +14,7 @@ import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class Player extends AppCompatActivity {
@@ -27,6 +28,8 @@ public class Player extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+
+        ArrayList<Data> test = this.getIntent().getParcelableArrayListExtra("SONG_DATA");
     }
 
     @Override

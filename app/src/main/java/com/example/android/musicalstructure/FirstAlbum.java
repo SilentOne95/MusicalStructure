@@ -2,11 +2,13 @@ package com.example.android.musicalstructure;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -58,12 +60,14 @@ public class FirstAlbum extends AppCompatActivity {
         final GridView gridView = findViewById(R.id.grid_view);
         gridView.setAdapter(adapter);
 
-        gridView.setOnClickListener(new View.OnClickListener() {
+        gridView.setOnItemClickListener(new GridView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent playerIntent = new Intent(FirstAlbum.this, Player.class);
-
-                startActivity(playerIntent);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(FirstAlbum.this, Player.class);
+//                intent.putExtra("SONG_DATA", songItem);
+                Bundle bundle = new Bundle();
+                bundle.putParcelableArrayList("SONG_DATA", new ArrayList<Parcelable>());
+                startActivity(intent);
             }
         });
     }
