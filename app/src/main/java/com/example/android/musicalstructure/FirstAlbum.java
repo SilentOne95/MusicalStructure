@@ -65,8 +65,8 @@ public class FirstAlbum extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(FirstAlbum.this, Player.class);
 //                intent.putExtra("SONG_DATA", songItem);
-                Bundle bundle = new Bundle();
-                bundle.putParcelableArrayList("SONG_DATA", new ArrayList<Parcelable>());
+//                Bundle bundle = new Bundle();
+//                bundle.putParcelableArrayList("SONG_DATA", new ArrayList<Parcelable>());
                 startActivity(intent);
             }
         });

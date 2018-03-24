@@ -28,8 +28,6 @@ public class Player extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
-
-        ArrayList<Data> test = this.getIntent().getParcelableArrayListExtra("SONG_DATA");
     }
 
     @Override

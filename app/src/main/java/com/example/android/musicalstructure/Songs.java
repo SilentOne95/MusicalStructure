@@ -3,27 +3,25 @@ package com.example.android.musicalstructure;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Data implements Parcelable {
+public class Songs implements Parcelable {
 
     public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
-        public Data createFromParcel(Parcel in) {
-            return new Data(in);
+        public Songs createFromParcel(Parcel in) {
+            return new Songs(in);
         }
 
-        public Data[] newArray(int size) {
-            return new Data[size];
+        public Songs[] newArray(int size) {
+            return new Songs[size];
         }
     };
 
     private long id;
-    private String albumName;
     private String songName;
     private int imageResourceId;
 
     // Constructor
-    public Data(long id, String albumName, String songName, int imageResourceId){
+    public Songs(long id, String songName, int imageResourceId){
         this.id = id;
-        this.albumName = albumName;
         this.songName = songName;
         this.imageResourceId = imageResourceId;
     }
@@ -34,14 +32,6 @@ public class Data implements Parcelable {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public String getAlbumName() {
-        return albumName;
-    }
-
-    public void setAlbumName(String albumName) {
-        this.albumName = albumName;
     }
 
     public String getSongName() {
@@ -61,9 +51,8 @@ public class Data implements Parcelable {
     }
 
     // Parcelling part
-    public Data(Parcel in){
+    public Songs(Parcel in){
         this.id = in.readLong();
-        this.albumName = in.readString();
         this.songName = in.readString();
         this.imageResourceId =  in.readInt();
     }
@@ -76,7 +65,6 @@ public class Data implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeLong(this.id);
-        dest.writeString(this.albumName);
         dest.writeString(this.songName);
         dest.writeInt(this.imageResourceId);
     }
@@ -85,7 +73,6 @@ public class Data implements Parcelable {
     public String toString() {
         return "Student{" +
                 "id='" + id + '\'' +
-                ", albumName='" + albumName + '\'' +
                 ", songName='" + songName + '\'' +
                 ", imageResourceId='" + imageResourceId + '\'' +
                 '}';
