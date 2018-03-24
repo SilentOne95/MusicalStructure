@@ -19,10 +19,6 @@ public class MainActivity extends AppCompatActivity {
         RelativeLayout secondRow = findViewById(R.id.second_row);
         RelativeLayout thirdRow = findViewById(R.id.third_row);
         RelativeLayout fourthRow = findViewById(R.id.fourth_row);
-        RelativeLayout fifthRow = findViewById(R.id.fifth_row);
-        RelativeLayout sixthRow = findViewById(R.id.sixth_row);
-        RelativeLayout seventhRow = findViewById(R.id.seventh_row);
-        RelativeLayout eighthRow = findViewById(R.id.eighth_row);
 
         // This listeners gets triggered whenever Album List is clicked.
         firstRow.setOnClickListener(new View.OnClickListener() {
@@ -58,42 +54,6 @@ public class MainActivity extends AppCompatActivity {
                 Intent fourthAlbumIntent = new Intent(MainActivity.this, FourthAlbum.class);
 
                 startActivity(fourthAlbumIntent);
-            }
-        });
-
-        fifthRow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent fifthAlbumIntent = new Intent(MainActivity.this, FifthAlbum.class);
-
-                startActivity(fifthAlbumIntent);
-            }
-        });
-
-        sixthRow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent sixthAlbumIntent = new Intent(MainActivity.this, SixthAlbum.class);
-
-                startActivity(sixthAlbumIntent);
-            }
-        });
-
-        seventhRow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent seventhAlbumIntent = new Intent(MainActivity.this, SeventhAlbum.class);
-
-                startActivity(seventhAlbumIntent);
-            }
-        });
-
-        eighthRow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent eighthAlbumIntent = new Intent(MainActivity.this, EighthAlbum.class);
-
-                startActivity(eighthAlbumIntent);
             }
         });
     }

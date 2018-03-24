@@ -3,78 +3,49 @@ package com.example.android.musicalstructure;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Songs implements Parcelable {
-
-    public static final Parcelable.Creator CREATOR = new Parcelable.Creator() {
-        public Songs createFromParcel(Parcel in) {
-            return new Songs(in);
-        }
-
-        public Songs[] newArray(int size) {
-            return new Songs[size];
-        }
-    };
-
-    private long id;
+/**
+ * Created by Marcin on 2018-03-24.
+ */
+public class Songs implements Parcelable{
+    private String albumName;
     private String songName;
-    private int imageResourceId;
+    private int albumImage; // drawable reference id
 
-    // Constructor
-    public Songs(long id, String songName, int imageResourceId){
-        this.id = id;
-        this.songName = songName;
-        this.imageResourceId = imageResourceId;
+    public Songs(String vAlbumName, String vSongName, int vAlbumImage)
+    {
+        this.albumName = vAlbumName;
+        this.songName = vSongName;
+        this.albumImage = vAlbumImage;
     }
 
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getSongName() {
-        return songName;
-    }
-
-    public void setSongName(String songName) {
-        this.songName = songName;
-    }
-
-    public int getImageResourceId() {
-        return imageResourceId;
-    }
-
-    public void setImageResourceId(int imageResourceId) {
-        this.imageResourceId = imageResourceId;
-    }
-
-    // Parcelling part
-    public Songs(Parcel in){
-        this.id = in.readLong();
-        this.songName = in.readString();
-        this.imageResourceId =  in.readInt();
+    private Songs(Parcel in){
+        albumName = in.readString();
+        songName = in.readString();
+        albumImage = in.readInt();
     }
 
     @Override
-    public int describeContents() {
-        return 0;
-    }
+    public int describeContents() { return 0; }
+
+    public String toString() { return albumName + "--" + songName + "--" + albumImage; }
 
     @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeLong(this.id);
-        dest.writeString(this.songName);
-        dest.writeInt(this.imageResourceId);
+    public void writeToParcel(Parcel parcel, int i) {
+        parcel.writeString(albumName);
+        parcel.writeString(songName);
+        parcel.writeInt(albumImage);
     }
 
-    @Override
-    public String toString() {
-        return "Student{" +
-                "id='" + id + '\'' +
-                ", songName='" + songName + '\'' +
-                ", imageResourceId='" + imageResourceId + '\'' +
-                '}';
-    }
+    public final Parcelable.Creator<Songs> CREATOR = new Parcelable.Creator<Songs>() {
+        @Override
+        public Songs createFromParcel(Parcel parcel) {
+            return new Songs(parcel);
+        }
+
+        @Override
+        public Songs[] newArray(int i) {
+            return new Songs[i];
+        }
+
+    };
 }

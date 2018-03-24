@@ -20,11 +20,6 @@
         <activity android:name=".SecondAlbum" android:label="Song List"/>
         <activity android:name=".ThirdAlbum" android:label="Song List"/>
         <activity android:name=".FourthAlbum" android:label="Song List"/>
-        <activity android:name=".FifthAlbum" android:label="Song List"/>
-        <activity android:name=".SixthAlbum" android:label="Song List"/>
-        <activity android:name=".SeventhAlbum" android:label="Song List"/>
-        <activity android:name=".EighthAlbum" android:label="Song List"/>
-        <activity android:name=".Player" android:label="Player"/>
     </application>
 
 </manifest>
