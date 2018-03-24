@@ -26,24 +26,29 @@ public class FirstAlbum extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        final Songs[] songsList = {
-                new Songs("Alive and Well", R.drawable.first_album),
-                new Songs("My Life Inside Your Heart", R.drawable.first_album),
-                new Songs("Great Awakening", R.drawable.first_album),
-                new Songs("Six Ways 'Til Sunday", R.drawable.first_album),
-                new Songs("401 Kill", R.drawable.first_album),
-                new Songs("The Art of Losing", R.drawable.first_album),
-                new Songs("Remains of Summer Memories", R.drawable.first_album),
-                new Songs("The Unraveling", R.drawable.first_album),
-                new Songs("Reception Fades", R.drawable.first_album),
-                new Songs("Stained Glass and Marble", R.drawable.first_album),
-                new Songs("Everchanging", R.drawable.first_album),
-                new Songs("Sometimes Selling Out Is Giving Up", R.drawable.first_album),
-                new Songs("3 Day Weekend", R.drawable.first_album),
-                new Songs("1000 Good Intentions", R.drawable.first_album),
-                new Songs("Weight of Time", R.drawable.first_album),
-                new Songs("Faint Resemblance", R.drawable.first_album)
-        };
+        String titles[] = new String[16];
+        titles[0] = "Alive and Well";
+        titles[1] = "My Life Inside Your Heart";
+        titles[2] = "Great Awakening";
+        titles[3] = "Six Ways 'Til Sunday";
+        titles[4] = "401 Kill";
+        titles[5] = "The Art of Losing";
+        titles[6] = "Remains of Summer Memories";
+        titles[7] = "The Unraveling";
+        titles[8] = "Reception Fades";
+        titles[9] = "Stained Glass and Marble";
+        titles[10] = "Everchanging";
+        titles[11] = "Sometimes Selling Out Is Giving Up";
+        titles[12] = "3 Day Weekend";
+        titles[14] = "1000 Good Intentions";
+        titles[15] = "Weight of Time";
+        titles[16] = "Faint Resemblance";
+
+        final ArrayList<Songs> songsList = new ArrayList<>();
+
+        for(int i = 0; titles.length > i; i++){
+            songsList.add(new Songs(titles[i], R.drawable.second_album));
+        }
 
         GridSongsAdapter adapter = new GridSongsAdapter(this, songsList);
         GridView gridView = findViewById(R.id.grid_view);

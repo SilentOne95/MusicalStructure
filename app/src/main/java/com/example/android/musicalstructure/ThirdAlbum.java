@@ -33,13 +33,13 @@ public class ThirdAlbum extends AppCompatActivity {
         titles[10] = "Swing Life Away";
         titles[11] = "Rumors of My Demise";
 
-        ArrayList<Song> songItem = new ArrayList<>();
+        ArrayList<Songs> songsList = new ArrayList<>();
 
         for(int i = 0; titles.length > i; i++){
-            songItem.add(new Song(titles[i], R.drawable.third_album));
+            songsList.add(new Songs(titles[i], R.drawable.second_album));
         }
 
-        GridSongAdapter adapter = new GridSongAdapter(this, songItem);
+        GridSongsAdapter adapter = new GridSongsAdapter(this, songsList);
         GridView gridView = findViewById(R.id.grid_view);
         gridView.setAdapter(adapter);
     }
