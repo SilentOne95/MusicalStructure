@@ -26,6 +26,39 @@ public class FirstAlbum extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+        final Songs[] songsList = {
+                new Songs("Alive and Well", R.drawable.first_album),
+                new Songs("My Life Inside Your Heart", R.drawable.first_album),
+                new Songs("Great Awakening", R.drawable.first_album),
+                new Songs("Six Ways 'Til Sunday", R.drawable.first_album),
+                new Songs("401 Kill", R.drawable.first_album),
+                new Songs("The Art of Losing", R.drawable.first_album),
+                new Songs("Remains of Summer Memories", R.drawable.first_album),
+                new Songs("The Unraveling", R.drawable.first_album),
+                new Songs("Reception Fades", R.drawable.first_album),
+                new Songs("Stained Glass and Marble", R.drawable.first_album),
+                new Songs("Everchanging", R.drawable.first_album),
+                new Songs("Sometimes Selling Out Is Giving Up", R.drawable.first_album),
+                new Songs("3 Day Weekend", R.drawable.first_album),
+                new Songs("1000 Good Intentions", R.drawable.first_album),
+                new Songs("Weight of Time", R.drawable.first_album),
+                new Songs("Faint Resemblance", R.drawable.first_album)
+        };
+
+        GridSongsAdapter adapter = new GridSongsAdapter(this, songsList);
+        GridView gridView = findViewById(R.id.grid_view);
+        gridView.setAdapter(adapter);
+
+        gridView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent playerIntent = new Intent(FirstAlbum.this, Player.class);
+                playerIntent.putParcelableArrayListExtra("TEST", songsList);
+
+                startActivity(playerIntent);
+            }
+        });
+
     }
 
     @Override

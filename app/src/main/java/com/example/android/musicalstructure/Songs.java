@@ -7,19 +7,17 @@ import android.os.Parcelable;
  * Created by Marcin on 2018-03-24.
  */
 public class Songs implements Parcelable{
-    private String albumName;
-    private String songName;
-    private int albumImage; // drawable reference id
 
-    public Songs(String vAlbumName, String vSongName, int vAlbumImage)
+    String songName;
+    int albumImage; // drawable reference id
+
+    public Songs(String vSongName, int vAlbumImage)
     {
-        this.albumName = vAlbumName;
         this.songName = vSongName;
         this.albumImage = vAlbumImage;
     }
 
     private Songs(Parcel in){
-        albumName = in.readString();
         songName = in.readString();
         albumImage = in.readInt();
     }
@@ -27,11 +25,10 @@ public class Songs implements Parcelable{
     @Override
     public int describeContents() { return 0; }
 
-    public String toString() { return albumName + "--" + songName + "--" + albumImage; }
+    public String toString() { return songName + "--" + albumImage; }
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(albumName);
         parcel.writeString(songName);
         parcel.writeInt(albumImage);
     }
