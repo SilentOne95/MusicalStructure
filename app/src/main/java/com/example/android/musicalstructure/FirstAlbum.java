@@ -1,17 +1,14 @@
 package com.example.android.musicalstructure;
 
-import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class FirstAlbum extends AppCompatActivity {
@@ -26,7 +23,8 @@ public class FirstAlbum extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        String titles[] = new String[16];
+        //Adding song titles to the Array
+        String titles[] = new String[17];
         titles[0] = "Alive and Well";
         titles[1] = "My Life Inside Your Heart";
         titles[2] = "Great Awakening";
@@ -44,21 +42,24 @@ public class FirstAlbum extends AppCompatActivity {
         titles[15] = "Weight of Time";
         titles[16] = "Faint Resemblance";
 
+        // Creating new Array of Songs and store song titles and images using loop
         final ArrayList<Songs> songsList = new ArrayList<>();
 
         for(int i = 0; titles.length > i; i++){
-            songsList.add(new Songs(titles[i], R.drawable.second_album));
+            songsList.add(new Songs(titles[i], R.drawable.first_album));
         }
 
+        // Setting adapter to print out all song titles as new activity is started
         GridSongsAdapter adapter = new GridSongsAdapter(this, songsList);
-        GridView gridView = findViewById(R.id.grid_view);
+        final GridView gridView = findViewById(R.id.grid_view);
         gridView.setAdapter(adapter);
 
-        gridView.setOnClickListener(new View.OnClickListener() {
+        // Tracking which item was selected, starting new activity and passing the array
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent playerIntent = new Intent(FirstAlbum.this, Player.class);
-                playerIntent.putParcelableArrayListExtra("TEST", songsList);
+                playerIntent.putParcelableArrayListExtra("SONGS_ARRAY", songsList);
 
                 startActivity(playerIntent);
             }

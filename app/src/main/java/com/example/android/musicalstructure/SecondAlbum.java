@@ -1,8 +1,11 @@
 package com.example.android.musicalstructure;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.GridView;
 
 import java.util.ArrayList;
@@ -19,6 +22,7 @@ public class SecondAlbum extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
+        //Adding song titles to the Array
         String titles[] = new String[13];
         titles[0] = "Black Masks and Gasoline";
         titles[1] = "Heaven Knows";
@@ -34,15 +38,28 @@ public class SecondAlbum extends AppCompatActivity {
         titles[11] = "Amber Changing";
         titles[12] = "Any Way You Want It";
 
-        ArrayList<Songs> songsList = new ArrayList<>();
+        // Creating new Array of Songs and store song titles and images using loop
+        final ArrayList<Songs> songsList = new ArrayList<>();
 
         for(int i = 0; titles.length > i; i++){
             songsList.add(new Songs(titles[i], R.drawable.second_album));
         }
 
+        // Setting adapter to print out all song titles as new activity is started
         GridSongsAdapter adapter = new GridSongsAdapter(this, songsList);
         GridView gridView = findViewById(R.id.grid_view);
         gridView.setAdapter(adapter);
+
+        // Tracking which item was selected, starting new activity and passing the array
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent playerIntent = new Intent(SecondAlbum.this, Player.class);
+                playerIntent.putParcelableArrayListExtra("SONGS_ARRAY", songsList);
+
+                startActivity(playerIntent);
+            }
+        });
     }
 
     @Override

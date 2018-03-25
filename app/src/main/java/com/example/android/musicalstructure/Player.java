@@ -18,6 +18,9 @@ public class Player extends AppCompatActivity {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
+
+        // Receiving array passed from another activity
+
     }
 
     @Override

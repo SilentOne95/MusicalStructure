@@ -54,7 +54,7 @@ public class GridSongsAdapter extends ArrayAdapter<Songs> {
         // If not, this view already has the layout inflated from a previous call to getView,
         // and we modify the View widgets as usual.
         if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.activity_song_list, parent, false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.grid_item, parent, false);
         }
 
         TextView vSongName = convertView.findViewById(R.id.song_list_title);
