@@ -7,11 +7,15 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.GridView;
 
 import java.util.ArrayList;
 
 public class FirstAlbum extends AppCompatActivity {
+
+
+    static final ArrayList<Songs> songsList = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +47,7 @@ public class FirstAlbum extends AppCompatActivity {
         titles[16] = "Faint Resemblance";
 
         // Creating new Array of Songs and store song titles and images using loop
-        final ArrayList<Songs> songsList = new ArrayList<>();
+//      final ArrayList<Songs> songsList = new ArrayList<>();
 
         for(int i = 0; titles.length > i; i++){
             songsList.add(new Songs(titles[i], R.drawable.first_album));
@@ -59,15 +63,15 @@ public class FirstAlbum extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent playerIntent = new Intent(FirstAlbum.this, Player.class);
-                Bundle bundle = new Bundle();
-                bundle.putParcelableArrayList("SONGS_ARRAY", songsList);
-
-                playerIntent.putExtra("EXAMPLE", songsList.get(position));
 
                 startActivity(playerIntent);
             }
         });
 
+    }
+
+    public static ArrayList<Songs> getArrayList(){
+        return songsList;
     }
 
     @Override

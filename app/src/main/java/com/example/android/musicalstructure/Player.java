@@ -23,19 +23,10 @@ public class Player extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        Intent intent = getIntent();
-        ArrayList<Songs> songsList = intent.getParcelableArrayListExtra("SONGS_ARRAY");
+        ArrayList<Songs> arrayList = new ArrayList<>();
+        arrayList = FirstAlbum.getArrayList();
 
-        Songs test = intent.getParcelableExtra("EXAMPLE");
-
-        String string = test.songName;
-        int id = test.albumImage;
-
-        TextView textView = findViewById(R.id.song_name);
-        textView.setText(string);
-
-        ImageView imageView = findViewById(R.id.album_image);
-        imageView.setImageResource(id);
+        TextView test = findViewById(R.id.song_name);
 
     }
 

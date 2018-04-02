@@ -45,4 +45,9 @@ public class Songs implements Parcelable{
         }
 
     };
+
+    public String getSongName() {
+        return songName;
+    }
+
 }
