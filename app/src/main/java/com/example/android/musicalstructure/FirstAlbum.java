@@ -62,6 +62,8 @@ public class FirstAlbum extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putParcelableArrayList("SONGS_ARRAY", songsList);
 
+                playerIntent.putExtra("EXAMPLE", songsList.get(position));
+
                 startActivity(playerIntent);
             }
         });

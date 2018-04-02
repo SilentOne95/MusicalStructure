@@ -26,6 +26,17 @@ public class Player extends AppCompatActivity {
         Intent intent = getIntent();
         ArrayList<Songs> songsList = intent.getParcelableArrayListExtra("SONGS_ARRAY");
 
+        Songs test = intent.getParcelableExtra("EXAMPLE");
+
+        String string = test.songName;
+        int id = test.albumImage;
+
+        TextView textView = findViewById(R.id.song_name);
+        textView.setText(string);
+
+        ImageView imageView = findViewById(R.id.album_image);
+        imageView.setImageResource(id);
+
     }
 
     @Override
