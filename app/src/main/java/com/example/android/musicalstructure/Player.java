@@ -1,9 +1,13 @@
 package com.example.android.musicalstructure;
 
+import android.content.Intent;
+import android.media.Image;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.GridView;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.ArrayList;
 
@@ -19,7 +23,8 @@ public class Player extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        // Receiving array passed from another activity
+        Intent intent = getIntent();
+        ArrayList<Songs> songsList = intent.getParcelableArrayListExtra("SONGS_ARRAY");
 
     }
 
