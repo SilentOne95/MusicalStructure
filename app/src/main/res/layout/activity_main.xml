@@ -2,39 +2,26 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     tools:context="com.example.android.musicalstructure.MainActivity"
-    android:background="@drawable/gradient_background">
+    android:background="@drawable/gradient_background"
+    style="@style/default_layout_dimen">
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        style="@style/default_layout_dimen"
         android:orientation="vertical">
 
         <RelativeLayout
             android:id="@+id/first_row"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            style="@style/default_layout_dimen">
 
             <ImageView
                 android:id="@+id/first_album_image"
                 android:src="@drawable/first_album"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_margin="10dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"/>
+                style="@style/album_image"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="The Unraveling"
-                android:textSize="22sp"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:layout_toEndOf="@+id/first_album_image"
-                android:layout_centerVertical="true"/>
+                style="@style/album_title_one" />
 
             <ImageView
                 android:id="@+id/first_arrow_right"
@@ -65,22 +52,11 @@
             <ImageView
                 android:id="@+id/second_album_image"
                 android:src="@drawable/second_album"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_margin="10dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"/>
+                style="@style/album_image"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="Revolutions per\nMinute"
-                android:textAlignment="center"
-                android:textSize="22sp"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:layout_toEndOf="@+id/second_album_image"
-                android:layout_centerVertical="true"/>
+                style="@style/album_title_two" />
 
             <ImageView
                 android:id="@+id/second_arrow_right"
@@ -111,22 +87,11 @@
             <ImageView
                 android:id="@+id/third_album_image"
                 android:src="@drawable/third_album"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_margin="10dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"/>
+                style="@style/album_image"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="Siren Song Of The\nCounter-Culture"
-                android:textAlignment="center"
-                android:textSize="22sp"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:layout_toEndOf="@+id/third_album_image"
-                android:layout_centerVertical="true"/>
+                style="@style/album_title_three"/>
 
             <ImageView
                 android:id="@+id/third_arrow_right"
@@ -157,22 +122,11 @@
             <ImageView
                 android:id="@+id/fourth_album_image"
                 android:src="@drawable/fourth_album"
-                android:layout_width="60dp"
-                android:layout_height="60dp"
-                android:layout_margin="10dp"
-                android:layout_alignParentStart="true"
-                android:layout_centerVertical="true"/>
+                style="@style/album_image"/>
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="The Sufferer and\nThe Witness"
-                android:textAlignment="center"
-                android:textSize="22sp"
-                android:textColor="#fff"
-                android:textStyle="bold"
-                android:layout_toEndOf="@+id/fourth_album_image"
-                android:layout_centerVertical="true"/>
+                style="@style/album_title_four"/>
 
             <ImageView
                 android:id="@+id/fourth_arrow_right"

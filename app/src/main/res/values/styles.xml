@@ -1,5 +1,4 @@
 <resources>
-
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -8,4 +7,43 @@
         <item name="colorAccent">#fff</item>
     </style>
 
+    <!-- activity_main -->
+    <style name="default_layout_dimen">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="album_image">
+        <item name="android:layout_width">60dp</item>
+        <item name="android:layout_height">60dp</item>
+        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_alignParentStart">true</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="album_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">#fff</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="album_title_one" parent="album_title">
+        <item name="android:layout_toEndOf">@id/first_album_image</item>
+    </style>
+
+    <style name="album_title_two" parent="album_title">
+        <item name="android:layout_toEndOf">@id/second_album_image</item>
+    </style>
+
+    <style name="album_title_three" parent="album_title">
+        <item name="android:layout_toEndOf">@id/third_album_image</item>
+    </style>
+
+    <style name="album_title_four" parent="album_title">
+        <item name="android:layout_toEndOf">@id/fourth_album_image</item>
+    </style>
 </resources>
