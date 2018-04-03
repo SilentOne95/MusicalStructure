@@ -46,25 +46,27 @@ public class GridSongsAdapter extends ArrayAdapter<Songs> {
     @NonNull
     @Override
     public View getView(int position, View convertView, @NonNull ViewGroup parent) {
-        // Gets the AndroidFlavor object from the ArrayAdapter at the appropriate position
+        // Gets the Songs object from the ArrayAdapter at the appropriate position
+        View gridView = convertView;
+        if (gridView == null) {
+            gridView = LayoutInflater.from(getContext()).inflate(R.layout.grid_item, parent, false);
+        }
+
         Songs songsList = getItem(position);
 
         // Adapters recycle views to AdapterViews.
         // If this is a new View object we're getting, then inflate the layout.
         // If not, this view already has the layout inflated from a previous call to getView,
         // and we modify the View widgets as usual.
-        if (convertView == null) {
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.grid_item, parent, false);
-        }
 
-        TextView vSongName = convertView.findViewById(R.id.song_list_title);
+        TextView vSongName = gridView.findViewById(R.id.song_list_title);
         if(songsList != null)
-            vSongName.setText(songsList.songName);
+            vSongName.setText(songsList.getSongName());
 
-        ImageView vAlbumImage = convertView.findViewById(R.id.song_list_image);
+        ImageView vAlbumImage = gridView.findViewById(R.id.song_list_image);
         if(songsList != null)
-            vAlbumImage.setImageResource(songsList.albumImage);
+            vAlbumImage.setImageResource(songsList.getAlbumImage());
 
-        return convertView;
+        return gridView;
     }
 }

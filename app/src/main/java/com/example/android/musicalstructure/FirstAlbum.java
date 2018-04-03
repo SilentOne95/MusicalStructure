@@ -16,6 +16,7 @@ public class FirstAlbum extends AppCompatActivity {
 
 
     static final ArrayList<Songs> songsList = new ArrayList<>();
+    private static String SONG_LIST = "listSong";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +48,6 @@ public class FirstAlbum extends AppCompatActivity {
         titles[16] = "Faint Resemblance";
 
         // Creating new Array of Songs and store song titles and images using loop
-//      final ArrayList<Songs> songsList = new ArrayList<>();
 
         for(int i = 0; titles.length > i; i++){
             songsList.add(new Songs(titles[i], R.drawable.first_album));
@@ -63,7 +63,7 @@ public class FirstAlbum extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent playerIntent = new Intent(FirstAlbum.this, Player.class);
-
+                playerIntent.putExtra(SONG_LIST, getArrayList().get(position));
                 startActivity(playerIntent);
             }
         });

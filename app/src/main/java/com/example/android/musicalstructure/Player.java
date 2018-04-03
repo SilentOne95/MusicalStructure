@@ -13,6 +13,9 @@ import java.util.ArrayList;
 
 public class Player extends AppCompatActivity {
 
+    TextView name;
+    ImageView image;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,10 +26,21 @@ public class Player extends AppCompatActivity {
             getSupportActionBar().setDisplayShowHomeEnabled(true);
         }
 
-        ArrayList<Songs> arrayList = new ArrayList<>();
-        arrayList = FirstAlbum.getArrayList();
+        // Get the intent from first album
+        Intent intent = getIntent();
+        Songs myChoice = intent.getParcelableExtra("listSong");
 
-        TextView test = findViewById(R.id.song_name);
+        // Initialize the string
+        String titleSong = myChoice.getSongName();
+        int imageAlbum = myChoice.getAlbumImage();
+
+        // Initialize the view and set data
+        name = findViewById(R.id.song_name);
+        name.setText(titleSong);
+
+        // Initialize the view and set data
+        image = findViewById(R.id.album_image);
+        image.setImageResource(imageAlbum);
 
     }
 

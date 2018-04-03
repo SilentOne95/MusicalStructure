@@ -22,10 +22,28 @@ public class Songs implements Parcelable{
         albumImage = in.readInt();
     }
 
+    public static final Creator<Songs> CREATOR = new Creator<Songs>() {
+        @Override
+        public Songs createFromParcel(Parcel in) {
+            return new Songs(in);
+        }
+
+        @Override
+        public Songs[] newArray(int size) {
+            return new Songs[size];
+        }
+    };
+
+    public String getSongName() {
+        return songName;
+    }
+
+    public int getAlbumImage() {
+        return albumImage;
+    }
+
     @Override
     public int describeContents() { return 0; }
-
-    public String toString() { return songName + "--" + albumImage; }
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
@@ -33,21 +51,7 @@ public class Songs implements Parcelable{
         parcel.writeInt(albumImage);
     }
 
-    public final Parcelable.Creator<Songs> CREATOR = new Parcelable.Creator<Songs>() {
-        @Override
-        public Songs createFromParcel(Parcel parcel) {
-            return new Songs(parcel);
-        }
-
-        @Override
-        public Songs[] newArray(int i) {
-            return new Songs[i];
-        }
-
-    };
-
-    public String getSongName() {
-        return songName;
-    }
+    /** for debugging purpose - not necessary but highly recommended */
+    public String toString() { return songName + "--" + albumImage; }
 
 }
