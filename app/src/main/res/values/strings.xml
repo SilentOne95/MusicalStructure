@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Musical Structure</string>
+
+    <string name="first_album_title">The Unraveling</string>
+    <string name="second_album_title">Revolutions per\nMinute</string>
+    <string name="third_album_title">Siren Song Of The\nCounter-Culture</string>
+    <string name="fourth_album_title">The Sufferer and\nThe Witness</string>
 </resources>

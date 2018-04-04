@@ -9,12 +9,7 @@
 
     <GridView
         android:id="@+id/grid_view"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnWidth="150dp"
-        android:numColumns="auto_fit"
-        android:stretchMode="columnWidth"
-        android:gravity="center">
+        style="@style/song_list_grid_view">
     </GridView>
 
 </RelativeLayout>

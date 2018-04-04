@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- general -->
+    <dimen name="ten">10dp</dimen>
+    <dimen name="fifteen">15dp</dimen>
+
+    <!-- activity_main -->
+    <dimen name="main_album_image_size">60dp</dimen>
+    <dimen name="main_album_title_text_size">22sp</dimen>
+    <dimen name="main_arrow_right_size">30dp</dimen>
+    <dimen name="main_separating_line_height">1dp</dimen>
+
+    <!-- grid_item -->
+    <dimen name="grid_item_layout_height">210dp</dimen>
+    <dimen name="grid_item_layout_padding">16dp</dimen>
+    <dimen name="grid_item_image_size">120dp</dimen>
+    <dimen name="grid_item_text_size">16sp</dimen>
+
+    <!-- activity_song_list -->
+    <dimen name="grid_view_column_width">150dp</dimen>
+</resources>
