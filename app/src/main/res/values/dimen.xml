@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- general -->
+    <dimen name="zero">0dp</dimen>
     <dimen name="ten">10dp</dimen>
     <dimen name="fifteen">15dp</dimen>
 
@@ -18,4 +19,11 @@
 
     <!-- activity_song_list -->
     <dimen name="grid_view_column_width">150dp</dimen>
+
+    <!-- player_item -->
+    <dimen name="player_item_image_size">200dp</dimen>
+    <dimen name="player_item_image_margin">75dp</dimen>
+    <dimen name="player_item_song_text_size">22sp</dimen>
+    <dimen name="player_item_song_margin">20dp</dimen>
+    <dimen name="player_item_box_buttons_size">100dp</dimen>
 </resources>

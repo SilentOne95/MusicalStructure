@@ -107,4 +107,43 @@
         <item name="android:stretchMode">columnWidth</item>
         <item name="android:gravity">center</item>
     </style>
+
+    <!-- player_item -->
+    <style name="player_item_image">
+        <item name="android:layout_height">@dimen/player_item_image_size</item>
+        <item name="android:layout_width">@dimen/player_item_image_size</item>
+        <item name="android:layout_marginTop">@dimen/player_item_image_margin</item>
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="player_item_song_name">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_margin">@dimen/player_item_song_margin</item>
+        <item name="android:textSize">@dimen/player_item_song_text_size</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_below">@id/album_image</item>
+    </style>
+
+    <style name="player_item_buttons_box">
+        <item name="android:layout_height">@dimen/player_item_box_buttons_size</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="player_item_single_button_box">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_width">@dimen/zero</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="player_item_image_buttons">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_margin">@dimen/ten</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
 </resources>

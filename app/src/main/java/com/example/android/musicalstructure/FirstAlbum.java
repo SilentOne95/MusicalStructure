@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 public class FirstAlbum extends AppCompatActivity {
 
-
+    // Creating new Array
     static final ArrayList<Songs> songsList = new ArrayList<>();
     private static String SONG_LIST = "listSong";
 
@@ -48,7 +48,6 @@ public class FirstAlbum extends AppCompatActivity {
         titles[16] = "Faint Resemblance";
 
         // Creating new Array of Songs and store song titles and images using loop
-
         for(int i = 0; titles.length > i; i++){
             songsList.add(new Songs(titles[i], R.drawable.first_album));
         }
@@ -70,9 +69,7 @@ public class FirstAlbum extends AppCompatActivity {
 
     }
 
-    public static ArrayList<Songs> getArrayList(){
-        return songsList;
-    }
+    public static ArrayList<Songs> getArrayList(){ return songsList; }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {

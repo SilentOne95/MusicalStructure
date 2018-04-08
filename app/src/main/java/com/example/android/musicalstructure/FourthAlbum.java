@@ -12,6 +12,10 @@ import java.util.ArrayList;
 
 public class FourthAlbum extends AppCompatActivity {
 
+    // Creating new Array
+    static final ArrayList<Songs> songsList = new ArrayList<>();
+    private static String SONG_LIST = "listSong";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,16 +43,14 @@ public class FourthAlbum extends AppCompatActivity {
         titles[12] = "Survive";
         titles[13] = "Built to Last";
 
-        // Creating new Array of Songs and store song titles and images using loop
-        final ArrayList<Songs> songsList = new ArrayList<>();
-
+        // Storing song titles and images using loop
         for(int i = 0; titles.length > i; i++){
             songsList.add(new Songs(titles[i], R.drawable.fourth_album));
         }
 
         // Setting adapter to print out all song titles as new activity is started
         GridSongsAdapter adapter = new GridSongsAdapter(this, songsList);
-        GridView gridView = findViewById(R.id.grid_view);
+        final GridView gridView = findViewById(R.id.grid_view);
         gridView.setAdapter(adapter);
 
         // Tracking which item was selected, starting new activity and passing the array
@@ -56,12 +58,14 @@ public class FourthAlbum extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent playerIntent = new Intent(FourthAlbum.this, Player.class);
-                playerIntent.putParcelableArrayListExtra("SONGS_ARRAY", songsList);
-
+                playerIntent.putExtra(SONG_LIST, getArrayList().get(position));
                 startActivity(playerIntent);
             }
         });
+
     }
+
+    public static ArrayList<Songs> getArrayList(){ return songsList; }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
