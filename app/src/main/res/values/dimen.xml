@@ -22,8 +22,9 @@
 
     <!-- player_item -->
     <dimen name="player_item_image_size">200dp</dimen>
-    <dimen name="player_item_image_margin">75dp</dimen>
+    <dimen name="player_item_image_margin">55dp</dimen>
     <dimen name="player_item_song_text_size">22sp</dimen>
     <dimen name="player_item_song_margin">20dp</dimen>
     <dimen name="player_item_box_buttons_size">100dp</dimen>
+    <dimen name="player_item_buttons_size">50dp</dimen>
 </resources>

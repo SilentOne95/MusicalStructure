@@ -8,8 +8,8 @@ import android.os.Parcelable;
  */
 public class Songs implements Parcelable{
 
-    String songName;
-    int albumImage; // drawable reference id
+    private String songName;
+    private int albumImage; // drawable reference id
 
     public Songs(String vSongName, int vAlbumImage)
     {

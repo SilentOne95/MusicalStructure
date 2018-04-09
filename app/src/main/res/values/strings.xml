@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">Musical Structure</string>
 
+    <!-- string values -->
     <string name="first_album_title">The Unraveling</string>
     <string name="second_album_title">Revolutions per\nMinute</string>
     <string name="third_album_title">Siren Song Of The\nCounter-Culture</string>
     <string name="fourth_album_title">The Sufferer and\nThe Witness</string>
+
+    <!-- content descriptions -->
+    <string name="album_image">Contains image of song album.</string>
+    <string name="arrow_go_next">Arrow which suggest to click and check songs in the album.</string>
+    <string name="player_buttons">Clickable button images: previous, play, next.</string>
 </resources>
